@@ -1,12 +1,14 @@
 package edu.elsmancs.Cotxox.domain;
 
+import java.util.ArrayList;
+
 public class Conductor {
 
     private String nombre = null;       //Propiedades del ejercicio
     private String modelo = null;
     private String matricula = null;
     private double valoracionMedia = 0.0;
-    private byte valoracion = 0;
+    private ArrayList<byte> valoracion = new ArrayList<>();  //Array valoracion
     private Boolean ocupado = false;
 
 
@@ -42,7 +44,36 @@ public class Conductor {
     }
 
     //VALORACIÓN
+    /* 1.Añadir nueva valoración.
+    *  2.Contabilizar valoraciones con la Array.
+    *  3.Calcular valoracion media del conductor.
+    *  4.Actualizar media del conductor.
+     */
 
 
+    public Double getValoracion() { //1
+        return this.valoracionMedia;
+    }
+
+    public int getCantidadValoracion() {  //Ponemos int porque esperamos un enter (.size())
+        return this.valoracion.size(); // 2
+    }
+
+    public double getValoracionMedia() {
+        int contadorValoraciones = 0;
+        for (byte valoracion : this.valoracion) { //3
+            contadorValoraciones += valoracion;
+        }
+        this.valoracionMedia = (double) contadorValoraciones / this.valoracion.size();
+        /*Calcular media, cantidad de valoraciones/ numero de
+        * elementos de Array valoraicion.
+        */
+        return this.valoracionMedia;
+    }
+
+    public void setValoracion(byte valoracion) { //byte por el formato del main(Linea 73)
+        this.valoracion.add(valoracion); //Añadimos en Array
+        this.getValoracionMedia(); //4
+    }
 }
 
