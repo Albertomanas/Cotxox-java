@@ -75,5 +75,15 @@ public class Conductor {
         this.valoracion.add(valoracion); //Añadimos en Array
         this.getValoracionMedia(); //4
     }
+
+    //OCUPADO/LIBRE
+
+    public Boolean isOcupado() {   //DEnominado is porque es Booleano
+        return this.ocupado;
+    }
+
+    public void setOcupado(Boolean ocupado) {
+        this.ocupado = ocupado;
+    }
 }
 
