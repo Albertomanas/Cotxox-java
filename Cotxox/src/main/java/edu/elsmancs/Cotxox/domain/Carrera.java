@@ -1,6 +1,6 @@
 package edu.elsmancs.Cotxox.domain;
 
-import edu.elsmancs.Cotxox.domain.Tarifa;
+import edu.elsmancs.Cotxox.domain.*;
 
 public class Carrera {
 
@@ -18,6 +18,10 @@ public class Carrera {
 
     public Carrera(String tarjetaCredito) {  //Método constructor
         this.tarjetaCredito = tarjetaCredito;
+    }
+
+    public Carrera() {
+
     }
 
     public String getTarjetaCredito() {
@@ -88,10 +92,33 @@ public class Carrera {
         return Tarifa.getCosteTotalEsperado(this);   //Hace referencia a la carrera procesada
     }
 
-   /* public Conductor asignarConductor(PoolConductores conductores) {
-
+    public void asignarConductor(PoolConductores conductores) {
+        setConductor(conductores.asignarConductor());
     }
 
-    */
+
+   public int getPropina() {
+       return this.propina = propina;
+   }
+
+   public void setPropina(int propina) {
+       this.propina = propina;
+   }
+
+   public void realizarPago(double pagoCliente) {
+        this.costeTotal = pagoCliente;
+   }
+
+   public void recibirPropina(int propinaCliente) {
+        this.propina = propinaCliente;
+   }
+
+   public void liberarConductor() {
+        getConductor().setOcupado(false);
+        /* Liberar conductor, pasamos parámetro false para indicar que
+        * dicho conductor está libre
+         */
+   }
+
 }
 
