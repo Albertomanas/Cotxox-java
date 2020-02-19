@@ -11,7 +11,7 @@ public class Tarifa {
         return distancia * costeMilla;
     }
 
-    public static double getCosteTiempo(int minuto) {  //Multiplicar minuto por el coste de este
+    public static double getCosteTiempo(double minuto) {  //Multiplicar minuto por el coste de este
         return minuto * costeMinuto;
     }
 
@@ -22,6 +22,6 @@ public class Tarifa {
         */
        double costeTotal = getCosteDistancia(carrera.getDistancia()) + getCosteTiempo(carrera.getTiempoEsperado());
        return costeTotal >= costeMinimo ? costeTotal : costeMinimo;
-       //operador coalescente = || = :? = Elvis operator
+       //operador coalescente = || w = x ? y : x = Elvis operator
     }
 }
