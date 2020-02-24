@@ -22,7 +22,6 @@
  * da de alta a un invitado/a automáticamente cargan 
  * en la tarjeta del invitado/a el coste de ambos servicios. 
  */
-
 package edu.elsmancs.ExamenResolucion;
 
 public class RicksyBusiness {
